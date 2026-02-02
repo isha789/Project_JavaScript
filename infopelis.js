@@ -7,165 +7,107 @@
 // Movie data used by pelis.html + pelis.js
 // You can add/remove movies freely as long as you keep the same keys.
 
+
+ /*
+  File: infopelis.js
+  Description: Movie data used for dynamic content generation
+*/
+
 const movies = [
   {
-    title: "The Godfather",
-    year: 1972,
-    style: "Crime",
-    director: "Francis Ford Coppola",
-    actors: "Marlon Brando, Al Pacino, James Caan",
-    oscars: 3
-  },
-  {
-    title: "Pulp Fiction",
-    year: 1994,
-    style: "Crime",
-    director: "Quentin Tarantino",
-    actors: "John Travolta, Uma Thurman, Samuel L. Jackson",
-    oscars: 1
-  },
-  {
-    title: "Schindler's List",
-    year: 1993,
-    style: "Historical Drama",
-    director: "Steven Spielberg",
-    actors: "Liam Neeson, Ben Kingsley, Ralph Fiennes",
-    oscars: 7
-  },
-  {
-    title: "The Dark Knight",
-    year: 2008,
-    style: "Action",
-    director: "Christopher Nolan",
-    actors: "Christian Bale, Heath Ledger, Aaron Eckhart",
+    title: "Blade Runner 2049",
+    year: 2017,
+    style: "Sci-Fi",
+    director: "Denis Villeneuve",
+    actors: "Ryan Gosling, Harrison Ford, Ana de Armas",
     oscars: 2
   },
   {
-    title: "Titanic",
-    year: 1997,
-    style: "Drama",
-    director: "James Cameron",
-    actors: "Leonardo DiCaprio, Kate Winslet, Billy Zane",
-    oscars: 11
-  },
-  {
-    title: "Forrest Gump",
-    year: 1994,
-    style: "Drama",
-    director: "Robert Zemeckis",
-    actors: "Tom Hanks, Robin Wright, Gary Sinise",
+    title: "Mad Max: Fury Road",
+    year: 2015,
+    style: "Action",
+    director: "George Miller",
+    actors: "Tom Hardy, Charlize Theron, Nicholas Hoult",
     oscars: 6
   },
   {
-    title: "The Lord of the Rings: The Return of the King",
-    year: 2003,
-    style: "Fantasy",
-    director: "Peter Jackson",
-    actors: "Elijah Wood, Viggo Mortensen, Ian McKellen",
-    oscars: 11
+    title: "La La Land",
+    year: 2016,
+    style: "Musical",
+    director: "Damien Chazelle",
+    actors: "Ryan Gosling, Emma Stone",
+    oscars: 6
   },
   {
-    title: "Inception",
+    title: "The Social Network",
     year: 2010,
-    style: "Sci-Fi",
-    director: "Christopher Nolan",
-    actors: "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
-    oscars: 4
-  },
-  {
-    title: "Gladiator",
-    year: 2000,
-    style: "Action",
-    director: "Ridley Scott",
-    actors: "Russell Crowe, Joaquin Phoenix, Connie Nielsen",
-    oscars: 5
-  },
-  {
-    title: "The Departed",
-    year: 2006,
-    style: "Crime",
-    director: "Martin Scorsese",
-    actors: "Leonardo DiCaprio, Matt Damon, Jack Nicholson",
-    oscars: 4
-  },
-  {
-    title: "12 Years a Slave",
-    year: 2013,
-    style: "Historical Drama",
-    director: "Steve McQueen",
-    actors: "Chiwetel Ejiofor, Michael Fassbender, Lupita Nyong'o",
+    style: "Drama",
+    director: "David Fincher",
+    actors: "Jesse Eisenberg, Andrew Garfield, Justin Timberlake",
     oscars: 3
   },
   {
-    title: "American Beauty",
-    year: 1999,
-    style: "Drama",
-    director: "Sam Mendes",
-    actors: "Kevin Spacey, Annette Bening, Thora Birch",
-    oscars: 5
+    title: "No Country for Old Men",
+    year: 2007,
+    style: "Thriller",
+    director: "Joel Coen, Ethan Coen",
+    actors: "Javier Bardem, Josh Brolin, Tommy Lee Jones",
+    oscars: 4
   },
   {
-    title: "Slumdog Millionaire",
-    year: 2008,
+    title: "Her",
+    year: 2013,
     style: "Drama",
-    director: "Danny Boyle",
-    actors: "Dev Patel, Freida Pinto, Anil Kapoor",
-    oscars: 8
-  },
-  {
-    title: "Interstellar",
-    year: 2014,
-    style: "Sci-Fi",
-    director: "Christopher Nolan",
-    actors: "Matthew McConaughey, Anne Hathaway, Jessica Chastain",
+    director: "Spike Jonze",
+    actors: "Joaquin Phoenix, Scarlett Johansson",
     oscars: 1
   },
   {
-    title: "Fight Club",
-    year: 1999,
-    style: "Drama",
-    director: "David Fincher",
-    actors: "Brad Pitt, Edward Norton, Helena Bonham Carter",
-    oscars: 0
-  },
-  {
-    title: "The Shawshank Redemption",
-    year: 1994,
-    style: "Drama",
-    director: "Frank Darabont",
-    actors: "Tim Robbins, Morgan Freeman, Bob Gunton",
-    oscars: 0
-  },
-  {
-    title: "Parasite",
-    year: 2019,
-    style: "Thriller",
-    director: "Bong Joon-ho",
-    actors: "Song Kang-ho, Lee Sun-kyun, Cho Yeo-jeong",
+    title: "The Grand Budapest Hotel",
+    year: 2014,
+    style: "Comedy",
+    director: "Wes Anderson",
+    actors: "Ralph Fiennes, Tony Revolori, Saoirse Ronan",
     oscars: 4
   },
   {
-    title: "Whiplash",
-    year: 2014,
-    style: "Drama",
-    director: "Damien Chazelle",
-    actors: "Miles Teller, J.K. Simmons, Paul Reiser",
-    oscars: 3
-  },
-  {
-    title: "Joker",
-    year: 2019,
-    style: "Drama",
-    director: "Todd Phillips",
-    actors: "Joaquin Phoenix, Robert De Niro, Zazie Beetz",
+    title: "Django Unchained",
+    year: 2012,
+    style: "Western",
+    director: "Quentin Tarantino",
+    actors: "Jamie Foxx, Christoph Waltz, Leonardo DiCaprio",
     oscars: 2
   },
   {
-    title: "Coco",
+    title: "Arrival",
+    year: 2016,
+    style: "Sci-Fi",
+    director: "Denis Villeneuve",
+    actors: "Amy Adams, Jeremy Renner",
+    oscars: 1
+  },
+  {
+    title: "The Wolf of Wall Street",
+    year: 2013,
+    style: "Drama",
+    director: "Martin Scorsese",
+    actors: "Leonardo DiCaprio, Jonah Hill, Margot Robbie",
+    oscars: 0
+  },
+  {
+    title: "Black Swan",
+    year: 2010,
+    style: "Thriller",
+    director: "Darren Aronofsky",
+    actors: "Natalie Portman, Mila Kunis",
+    oscars: 1
+  },
+  {
+    title: "Logan",
     year: 2017,
-    style: "Animation",
-    director: "Lee Unkrich",
-    actors: "Anthony Gonzalez, Gael García Bernal, Benjamin Bratt",
-    oscars: 2
+    style: "Action",
+    director: "James Mangold",
+    actors: "Hugh Jackman, Patrick Stewart, Dafne Keen",
+    oscars: 0
   }
 ];
