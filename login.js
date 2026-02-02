@@ -1,3 +1,9 @@
+//Este archivo gestiona el comportamiento del formulario de login mediante JavaScript.
+//Valida en tiempo real el nombre de usuario y la contraseña usando eventos.
+//Controla la visualización u ocultación de la contraseña.
+//Muestra u oculta el botón de envío según las condiciones de validación.
+//Redirige al usuario a la página de películas cuando el formulario es correcto.
+
 // Get elements
 const username = document.getElementById("username");
 const password = document.getElementById("password");

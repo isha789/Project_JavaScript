@@ -1,3 +1,9 @@
+//Este archivo contiene la información de las películas en formato de objetos JavaScript.
+//Cada película incluye datos como título, año, género, director y premios.
+//Los datos se almacenan en un array para facilitar su recorrido.
+//Este archivo se utiliza como fuente de datos para la página de películas.
+//Permite separar los datos de la lógica del programa.
+
 // Movie data used by pelis.html + pelis.js
 // You can add/remove movies freely as long as you keep the same keys.
 

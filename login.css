@@ -1,6 +1,13 @@
+/*
+Este archivo define el estilo visual de la página de inicio de sesión.
+Se encarga del diseño del formulario, colores, márgenes y tipografía.
+También controla la visibilidad de los elementos mediante clases CSS.
+Permite separar la presentación del contenido HTML.
+Mejora la legibilidad y experiencia de usuario de la página.
+*/
 body {
     font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    background: #f2f2f2; 
     padding: 40px;
   }
   

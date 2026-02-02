@@ -1,3 +1,9 @@
+//Este archivo se encarga de generar dinámicamente las tarjetas de películas.
+// Recorre el array de películas y crea los elementos HTML necesarios.
+// Implementa la función de búsqueda utilizando métodos de strings.
+// Actualiza el contenido de la página según el texto introducido.
+// Demuestra el uso de arrays, funciones y eventos en JavaScript.
+
 const grid = document.getElementById("movieGrid");
 const searchInput = document.getElementById("search");
 

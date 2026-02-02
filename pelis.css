@@ -1,3 +1,10 @@
+/*
+Este archivo define el diseño visual de la colección de películas.
+Utiliza un sistema de rejilla (grid) para organizar las tarjetas.
+Aplica estilos a las tarjetas para mejorar la presentación.
+Garantiza una distribución clara y ordenada del contenido.
+Contribuye a una interfaz limpia y fácil de usar.
+*/
 body {
     font-family: Arial;
     padding: 20px;
