@@ -30,10 +30,10 @@ function showMovies(list) {
 }
 
 // Filter movies
-function filterMovies() {
+function filterMovies() {  //this is to filter the movies from the search tab at the top e.g. if i search for any word it will filter all the movies that contains that word
   const text = searchInput.value.toLowerCase();
 
-  if (text === "") {
+  if (text === "") {  //if text is an empty string it will show all movies that are in the array stored
     showMovies(movies);
     return;
   }

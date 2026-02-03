@@ -8,7 +8,7 @@
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const showPassword = document.getElementById("showPassword");
-const submitBtn = document.getElementById("submitBtn");
+const submitBtn = document.getElementById("submitBtn"); // button to submit the login page and go to the movies page
 
 const userCheck = document.getElementById("userCheck");
 const lower = document.getElementById("lower");
@@ -29,14 +29,14 @@ username.addEventListener("input", validateForm);
 password.addEventListener("input", validateForm);
 
 // Main validation function
-function validateForm() {
+function validateForm() {   // this function is to validate the form depending on different verification rules
   let validUser = username.value.includes("@");
   let validLower = /[a-z]/.test(password.value);
   let validUpper = /[A-Z]/.test(password.value);
   let validNumber = /[0-9]/.test(password.value);
   let validLength = password.value.length >= 8;
 
-  update(userCheck, validUser);
+  update(userCheck, validUser); 
   update(lower, validLower);
   update(upper, validUpper);
   update(number, validNumber);

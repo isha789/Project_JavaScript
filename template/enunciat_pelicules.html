@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="../infopelis.js"></script>
+  <title>Pelis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .cerca {
+      background-color: #f1f1f1;
+  padding: 20px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+    .targeta {
+      padding: 15px;
+    }
+    .targeta-titol {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .targeta-info {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cerca">
+    <h1 style="text-align:center; padding: 20px 0;">Col·leció de pel·lícules</h1>    
+    <input type="text" id="cerca" name="Cerca" title="Terme de cerca" required><br>
+    <button type="button" onclick="funcio()">Cerca</button>
+  </div>
+  
+  <div class="container" id="film-container"></div>
+ 
+
+  <script>
+    
+
+  const grid = document.getElementById("film-container");
+  const searchInput = document.getElementById("cerca");
+
+ 
+  if (typeof movies === "undefined") {
+    grid.innerHTML =
+      "<p style='padding:20px;color:#b00;'><strong>Error:</strong> No s'ha carregat el fitxer <code>movies.js</code> (la variable <code>movies</code> no existeix).</p>";
+  } else {
+    showMovies(movies);
+  }
+
+  function funcio() {
+    filterMovies();
+  }
+
+  function showMovies(list) {
+    grid.innerHTML = "";
+
+    if (!Array.isArray(list) || list.length === 0) {
+      grid.innerHTML = "<p style='padding:20px;'>No s'han trobat pel·lícules.</p>";
+      return;
+    }
+
+    list.forEach(movie => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+     
+      const title = movie.title ?? movie.titol ?? movie.name ?? "Sense títol";
+      const year = movie.year ?? movie.any ?? "-";
+      const style = movie.style ?? movie.estil ?? "-";
+      const director = movie.director ?? "-";
+      const actors = Array.isArray(movie.actors) ? movie.actors.join(", ") : (movie.actors ?? "-");
+      const oscars = movie.oscars ?? "-";
+
+     
+      const img =
+        movie.img ?? movie.image ?? movie.poster ?? "https://via.placeholder.com/400x600?text=No+Image";
+
+      card.innerHTML = `
+        <img src="${img}" alt="${title}" onerror="this.style.display='none'">
+        <div class="targeta">
+          <div class="targeta-titol">${title}</div>
+          <div class="targeta-info"><strong>Any:</strong> ${year}</div>
+          <div class="targeta-info"><strong>Estil:</strong> ${style}</div>
+          <div class="targeta-info"><strong>Director:</strong> ${director}</div>
+          <div class="targeta-info"><strong>Actors:</strong> ${actors}</div>
+          <div class="targeta-info"><strong>Oscars:</strong> ${oscars}</div>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  }
+
+  function filterMovies() {
+    if (typeof movies === "undefined") return;
+
+    const text = searchInput.value.trim().toLowerCase();
+
+    if (text === "") {
+      showMovies(movies);
+      return;
+    }
+
+    const filtered = movies.filter(movie =>
+      Object.values(movie).some(value => {
+        if (value == null) return false;
+        if (Array.isArray(value)) return value.join(" ").toLowerCase().includes(text);
+        return value.toString().toLowerCase().includes(text);
+      })
+    );
+
+    showMovies(filtered);
+  }
+
+  searchInput.addEventListener("input", filterMovies);
+
+  </script>
+
+</body>
+</html>
