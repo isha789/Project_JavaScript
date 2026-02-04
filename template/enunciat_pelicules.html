@@ -1,3 +1,5 @@
+<!-- this is the movies page that contains all the code for movies
+this also have all the css in that page-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="../infopelis.js"></script>
   <title>Pelis</title>
-  <style>
+  <style> 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -79,7 +81,7 @@
     showMovies(movies);
   }
 
-  function funcio() {
+  function funcio() { // this is the function that calls the other function named filterMovies
     filterMovies();
   }
 
@@ -91,9 +93,9 @@
       return;
     }
 
-    list.forEach(movie => {
-      const card = document.createElement("div");
-      card.className = "card";
+    list.forEach(movie => { // this code is to loop through every item in the list
+      const card = document.createElement("div"); //it creates new div element
+      card.className = "card";// assign the class card to that div
 
      
       const title = movie.title ?? movie.titol ?? movie.name ?? "Sense títol";
@@ -122,8 +124,9 @@
       grid.appendChild(card);
     });
   }
-
-  function filterMovies() {
+ //search filter for movies – Listens to user input, searches across all movie fields (including arrays), 
+  //and dynamically updates the displayed movie cards
+  function filterMovies() { //this is the function to filter the movies based on the search
     if (typeof movies === "undefined") return;
 
     const text = searchInput.value.trim().toLowerCase();
